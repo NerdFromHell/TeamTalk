@@ -1,0 +1,20 @@
+<div class="background">
+    <h2>Text_channels</h2>
+    <div *ngFor="let textChannel of channelNames"> {{ textChannel.name }} </div>
+    
+    <mat-divider color=" white"></mat-divider>
+    
+    <h2>Voice_channels</h2>
+    <div>
+        #voice_channel_1
+        <br>
+        #voice_channel_2
+        <br>
+        #voice_channel_3
+    </div>
+
+    <input matInput placeholder="type text" name= "message" [(ngModel)]= "message" (keyup)="setMessageText()" (keyup.enter)="createChannel()">
+    <button matSuffix mat-button [disableRipple]="true" (click)="createChannel()">
+        <mat-icon style="color:#0d6efd !important;">send</mat-icon>
+    </button>
+</div>

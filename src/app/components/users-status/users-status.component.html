@@ -1,0 +1,7 @@
+<div>
+    <h2>Users:</h2>
+    <div *ngFor="let mapEntry of allUsersObj | keyvalue"  style="padding-left: 16px; ">
+        {{ $any(mapEntry).value.username }}
+    </div>
+
+</div>

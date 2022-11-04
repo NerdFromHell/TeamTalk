@@ -1,0 +1,17 @@
+<div fxFlex="100">
+    <div fxFlex="20" >
+        <app-sidebar></app-sidebar>
+    </div>
+    <div fxFlex fxLayout="column" style="height: 100vh" fxLayoutAlign="space-between">
+        <div fxFlex="60" fxLayoutAlign="space-between start">
+            <app-chat-history fxLayout="column" [channelMessagesObj]="channelMessagesObj" ></app-chat-history>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center" class="text_box">
+            <app-text-box></app-text-box>
+        </div>
+    </div>
+    <div fxFlex="20" >
+        <app-users-status [allUsersObj]="usersObj"></app-users-status>
+    </div>
+</div>
+  

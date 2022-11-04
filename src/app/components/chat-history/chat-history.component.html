@@ -1,0 +1,25 @@
+<cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport">
+    <div *cdkVirtualFor="let item of items" class="example-item">{{item}}</div>
+</cdk-virtual-scroll-viewport>
+    <div fxFlex="100" fxLayout="column" *cdkVirtualFor="let messageObj of channelMessagesObj | keyvalue; let i = index"  style="padding-left: 16px; outline: 1px solid limegree;">
+        <div fxLayout="row">
+            <div fxFlex="10">
+                <div *ngIf="$any(messageObj).value.sameUserAsLast === false" class="message_header">
+                    photo
+                </div>
+            </div>
+            <div fxFlex="90" fxLayout="column" fxLayoutAlign="space-around stretch">
+                <div fxLayout="row" *ngIf="$any(messageObj).value.sameUserAsLast === false" class="message_header">
+                    <div class="user_name">
+                        {{ $any(messageObj).value.user.username }}
+                    </div>
+                    &nbsp;
+                    <div class="time_sent">
+                        {{ $any(messageObj).value.createdAt | date:'dd/MM/yyyy h:mm:ss a' }}
+                    </div>
+                </div>
+                <div>{{ $any(messageObj).value.message }}</div>
+            </div>
+        </div>
+
+    </div> 
